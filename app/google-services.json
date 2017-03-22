@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "566986851106",
+    "firebase_url": "https://realtimenotekeeping.firebaseio.com",
+    "project_id": "realtimenotekeeping",
+    "storage_bucket": "realtimenotekeeping.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566986851106:android:dfafc7f3457684d0",
+        "android_client_info": {
+          "package_name": "com.example.spoor.realtimenotekeeping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566986851106-efn4bl7rvji8sfgr5imq7dnl5dr78hj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.spoor.realtimenotekeeping",
+            "certificate_hash": "ECE6CC5E79644E4539C3FBCAEBCF526058641FF0"
+          }
+        },
+        {
+          "client_id": "566986851106-jgqvd6gi01jg5spchi1681ltjap3dcie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc9eCX_h-LwEEJG5GRgFrbojG3No6w6VE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566986851106-jgqvd6gi01jg5spchi1681ltjap3dcie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

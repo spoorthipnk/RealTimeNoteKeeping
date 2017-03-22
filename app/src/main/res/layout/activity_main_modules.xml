@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="120dp"
+            app:srcCompat="@drawable/barcodewhite"
+            android:id="@+id/imageViewBarCodeScanner"
+            android:layout_gravity="center"
+            android:layout_height="110dp"
+            android:layout_weight="1"/>
+        <ImageView
+            app:srcCompat="@drawable/scanwhite"
+            android:id="@+id/imageViewOcr"
+            android:layout_width="120dp"
+            android:layout_gravity="center"
+            android:layout_height="120dp"
+            android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        <ImageView
+            app:srcCompat="@drawable/locationwhite"
+            android:id="@+id/imageViewLocation"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            />
+        <ImageView
+            android:layout_width="100dp"
+            app:srcCompat="@drawable/textwhite"
+            android:id="@+id/imageView6"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_height="90dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        <ImageView
+            android:layout_width="100dp"
+            app:srcCompat="@drawable/camerawhite"
+            android:id="@+id/imageViewCamera"
+            android:layout_gravity="center"
+            android:layout_height="100dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/videowhite"
+            android:id="@+id/imageView5"
+            android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

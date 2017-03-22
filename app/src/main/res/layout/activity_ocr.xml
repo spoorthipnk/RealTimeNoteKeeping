@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ocr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.spoor.realtimenotekeeping.OcrActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.example.spoor.realtimenotekeeping.ui.camera.CameraSourcePreview
+            android:id="@+id/preview"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.spoor.realtimenotekeeping.ui.camera.GraphicOverlay
+                android:id="@+id/graphicOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.example.spoor.realtimenotekeeping.ui.camera.CameraSourcePreview>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:text="Discard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonDiscardOcrNote"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"/>
+            <Button
+                android:text="Capture All"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:id="@+id/buttonSaveAllOcrNote"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"/>
+            <Button
+                android:text="Capture on Tap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:id="@+id/buttonSaveSomeOcrNote"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
