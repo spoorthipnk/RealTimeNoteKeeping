@@ -35,7 +35,7 @@
                 android:id="@+id/buttonDiscardBarcodeNote"
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/back_barcode"
                 android:textColor="@color/white"/>
             <Button
                 android:text="Save"
@@ -44,7 +44,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:id="@+id/buttonSaveBarcodeNote"
-                android:background="@color/colorPrimary"
+                android:background="@color/back_barcode"
                 android:textColor="@color/white"/>
 
 

@@ -10,15 +10,72 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.spoor.realtimenotekeeping.ExistingNotesActivity">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/buttonBarcodeNotes"
+        android:textSize="16sp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="88dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="81dp"
-        android:id="@+id/textViewBarcodeValue" />
+        android:text="Barcode Scanned Notes"
+        android:layout_weight="1"
+        android:background="@color/back_barcode"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:layout_weight="1"
+        android:text="Image to Text Notes"
+        android:background="@color/back_ocr"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Location Notes"
+        android:background="@color/back_location"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:text="Checklists"
+        android:layout_weight="1"
+        android:background="@color/back_checklist"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="Pictures"
+        android:background="@color/back_image"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Videos"
+        android:background="@color/back_video"
+        android:textColor="@color/white"
+        />
+
+
+
+</LinearLayout>
 </RelativeLayout>

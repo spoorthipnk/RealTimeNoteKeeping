@@ -17,8 +17,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
@@ -28,26 +27,29 @@ import com.google.android.gms.location.places.PlaceLikelihood;
 import com.google.android.gms.location.places.PlaceLikelihoodBuffer;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlacePicker;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class LocationActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks{
+
+public class LocationActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks,OnMapReadyCallback {
 
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 99;
-    private static final float DEFAULT_ZOOM = 3.0f ;
+    private static final float DEFAULT_ZOOM = 3.0f;
     private GoogleApiClient mGoogleApiClient;
-    int PLACE_PICKER_REQUEST = 1;
-    GoogleMap map;
     boolean mLocationPermissionGranted;
-    Location mLastKnownLocation = null;
-    String[] mLikelyPlaceNames;
-    CameraPosition mCameraPosition;
-    LatLng mDefaultLocation;;
+    LatLng selectedLocation;
+    private GoogleMap mMap;
+    int PLACE_PICKER_REQUEST = 1;
+    SupportMapFragment mapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +66,18 @@ public class LocationActivity extends AppCompatActivity implements GoogleApiClie
                 .build();
         mGoogleApiClient.connect();
 
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+                // Set a preference for minimum and maximum zoom.
+
+
         getDeviceLocation();
 
 
     }
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String permissions[],
@@ -79,15 +89,12 @@ public class LocationActivity extends AppCompatActivity implements GoogleApiClie
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     mLocationPermissionGranted = true;
+                    getDeviceLocation();
                 }
             }
         }
 
     }
-
-
-
-
 
 
     @Override
@@ -108,13 +115,13 @@ public class LocationActivity extends AppCompatActivity implements GoogleApiClie
     @Override
     protected void onStart() {
         super.onStart();
-        if( mGoogleApiClient != null )
+        if (mGoogleApiClient != null)
             mGoogleApiClient.connect();
     }
 
     @Override
     protected void onStop() {
-        if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
+        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
         super.onStop();
@@ -149,7 +156,7 @@ public class LocationActivity extends AppCompatActivity implements GoogleApiClie
                 });
 
                 startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -161,13 +168,33 @@ public class LocationActivity extends AppCompatActivity implements GoogleApiClie
             if (resultCode == RESULT_OK) {
                 Place place = PlacePicker.getPlace(data, this);
                 String toastMsg = String.format("Place: %s", place.getName());
-                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+                selectedLocation = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
+                showSelectedPlaceOnMap(selectedLocation);
+                Toast.makeText(this, toastMsg, Toast.LENGTH_SHORT).show();
             }
         }
     }
 
+    private void showSelectedPlaceOnMap(LatLng location) {
+       LatLngBounds locationBounds = new LatLngBounds(new LatLng(location.latitude - 1000, location.longitude - 1000),new LatLng(location.latitude + 1000, location.longitude + 1000));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(locationBounds,1));
+
+    }
 
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
 
 
+        mMap = googleMap;
+        if(selectedLocation!=null){
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(selectedLocation,15));
+            //
+            googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+            // Zoom out to zoom level 10, animating with a duration of 2 seconds.
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+        }
+
+
+    }
 }

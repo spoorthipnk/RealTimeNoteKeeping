@@ -21,6 +21,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.design.widget.Snackbar;
 
+import com.example.spoor.realtimenotekeeping.R;
 import com.example.spoor.realtimenotekeeping.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.barcode.Barcode;
 

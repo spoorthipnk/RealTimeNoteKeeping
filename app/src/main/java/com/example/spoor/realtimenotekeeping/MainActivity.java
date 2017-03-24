@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.spoor.realtimenotekeeping.BarcodeModule.BarcodeScannerActivity;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private Uri imageToUploadUri;
     private ImageView imageViewOcr, imageViewLocation;
+    Button buttonExistingNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,LocationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonExistingNotes = (Button)findViewById(R.id.buttonExistingNotes);
+        buttonExistingNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ExistingNotesActivity.class);
                 startActivity(intent);
             }
         });

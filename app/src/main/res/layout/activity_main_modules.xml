@@ -8,68 +8,118 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         >
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="match_parent">
-        <ImageView
-            android:layout_width="120dp"
-            app:srcCompat="@drawable/barcodewhite"
-            android:id="@+id/imageViewBarCodeScanner"
-            android:layout_gravity="center"
-            android:layout_height="110dp"
-            android:layout_weight="1"/>
-        <ImageView
-            app:srcCompat="@drawable/scanwhite"
-            android:id="@+id/imageViewOcr"
-            android:layout_width="120dp"
-            android:layout_gravity="center"
-            android:layout_height="120dp"
-            android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:background="@color/back_barcode"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="120dp"
+                    app:srcCompat="@drawable/barcodewhite"
+                    android:id="@+id/imageViewBarCodeScanner"
+                    android:layout_gravity="center"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/back_ocr"
+                android:layout_weight="1">
+                <ImageView
+                    app:srcCompat="@drawable/scanwhite"
+                    android:id="@+id/imageViewOcr"
+                    android:layout_width="120dp"
+                    android:layout_gravity="center"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
-        <ImageView
-            app:srcCompat="@drawable/locationwhite"
-            android:id="@+id/imageViewLocation"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            />
-        <ImageView
-            android:layout_width="100dp"
-            app:srcCompat="@drawable/textwhite"
-            android:id="@+id/imageView6"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_height="90dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/back_location"
+                android:layout_weight="1">
+                <ImageView
+                    app:srcCompat="@drawable/locationwhite"
+                    android:id="@+id/imageViewLocation"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/back_checklist"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="100dp"
+                    app:srcCompat="@drawable/textwhite"
+                    android:id="@+id/imageView6"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_height="90dp" />
+            </LinearLayout>
+
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
-        <ImageView
-            android:layout_width="100dp"
-            app:srcCompat="@drawable/camerawhite"
-            android:id="@+id/imageViewCamera"
-            android:layout_gravity="center"
-            android:layout_height="100dp"
-            android:layout_weight="1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/back_image"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="100dp"
+                    app:srcCompat="@drawable/camerawhite"
+                    android:id="@+id/imageViewCamera"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/back_video"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/videowhite"
+                    android:id="@+id/imageView5"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/videowhite"
-            android:id="@+id/imageView5"
-            android:layout_weight="1" />
+
+
         </TableRow>
     </TableLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/buttonExistingNotes"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="View existing notes"/>
 </LinearLayout>
