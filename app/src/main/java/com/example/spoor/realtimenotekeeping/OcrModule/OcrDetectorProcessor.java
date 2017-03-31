@@ -7,6 +7,8 @@ import com.example.spoor.realtimenotekeeping.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 
+import java.util.ArrayList;
+
 /**
  * A very simple Processor which gets detected TextBlocks and adds them to the overlay
  * as OcrGraphics.
@@ -14,6 +16,7 @@ import com.google.android.gms.vision.text.TextBlock;
 public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
 
     private GraphicOverlay<OcrGraphic> mGraphicOverlay;
+    ArrayList<String> itemList = new ArrayList<>();
 
     public OcrDetectorProcessor(GraphicOverlay<OcrGraphic> ocrGraphicOverlay) {
         mGraphicOverlay = ocrGraphicOverlay;
@@ -33,12 +36,19 @@ public class OcrDetectorProcessor implements Detector.Processor<TextBlock> {
         for (int i = 0; i < items.size(); ++i) {
             TextBlock item = items.valueAt(i);
             if (item != null && item.getValue() != null) {
+                itemList.add(item.getValue());
                 Log.d("OcrDetectorProcessor", "Text detected! " + item.getValue());
             }
             OcrGraphic graphic = new OcrGraphic(mGraphicOverlay, item);
             mGraphicOverlay.add(graphic);
         }
     }
+
+    public ArrayList<String> getAllTextBlocks() {
+
+        return itemList;
+    }
+
 
     /**
      * Frees the resources associated with this detection processor.

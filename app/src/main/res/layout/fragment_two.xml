@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.spoor.realtimenotekeeping.TwoFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/buttonBarcodeNotes"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:text="Barcode Scanned Notes"
+            android:layout_weight="1"
+
+            android:textColor="@color/back_barcode"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:text="Image to Text Notes"
+
+            android:textColor="@color/back_ocr"
+            />
+        <Button
+            android:layout_width="match_parent"
+
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Location Notes"
+
+            android:textColor="@color/back_location"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+
+            android:text="Checklists"
+            android:layout_weight="1"
+
+            android:textColor="@color/back_checklist"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+
+            android:layout_weight="1"
+            android:text="Pictures"
+
+            android:textColor="@color/back_image"
+            />
+        <Button
+            android:layout_width="match_parent"
+
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Videos"
+
+            android:textColor="@color/back_video"
+            />
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

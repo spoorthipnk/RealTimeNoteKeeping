@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/topLayout"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:layout_height="match_parent"
     android:keepScreenOn="true">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <com.example.spoor.realtimenotekeeping.ui.camera.CameraSourcePreview
         android:id="@+id/preview"
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="match_parent">
 
-        <com.example.spoor.realtimenotekeeping.ui.camera.GraphicOverlay
-            android:id="@+id/graphicOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
     </com.example.spoor.realtimenotekeeping.ui.camera.CameraSourcePreview>
+
+    <com.example.spoor.realtimenotekeeping.ui.camera.GraphicOverlay
+        android:id="@+id/graphicOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

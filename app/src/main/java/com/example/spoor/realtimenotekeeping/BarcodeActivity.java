@@ -74,7 +74,7 @@ public class BarcodeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DatabaseReference newRef = mDatabaseReference.child("Barcode").push();
                 newRef.setValue(barcode);
-                Intent intent = new Intent(BarcodeActivity.this,MainActivity.class);
+                Intent intent = new Intent(BarcodeActivity.this,MainScreenActivity.class);
                 startActivity(intent);
             }
         });

@@ -42,23 +42,23 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
 
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".BarcodeModule.BarcodeScannerActivity" />
         <activity android:name=".PictureActivity" />
-        <activity android:name=".LoginActivity" >   </activity>
-        <activity android:name=".ExistingNotesActivity">
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ExistingNotesActivity"></activity>
+        <activity android:name=".BarcodeActivity" />
+        <activity android:name=".OcrActivity" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".NotesBarcodeActivity" />
+        <activity android:name=".MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BarcodeActivity" />
-        <activity android:name=".OcrActivity" />
-        <activity android:name=".LocationActivity"></activity>
-        <activity android:name=".NotesBarcodeActivity"></activity>
+        <activity android:name=".OcrTextActivity"></activity>
     </application>
 
 </manifest>

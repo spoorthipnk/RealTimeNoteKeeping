@@ -9,6 +9,7 @@ import com.example.spoor.realtimenotekeeping.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.text.Text;
 import com.google.android.gms.vision.text.TextBlock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +25,7 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
     private static Paint sRectPaint;
     private static Paint sTextPaint;
     private final TextBlock mText;
+    private ArrayList<String> allText = new ArrayList<>();
 
     OcrGraphic(GraphicOverlay overlay, TextBlock text) {
         super(overlay);
@@ -99,7 +101,13 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
         for(Text currentText : textComponents) {
             float left = translateX(currentText.getBoundingBox().left);
             float bottom = translateY(currentText.getBoundingBox().bottom);
+            allText.add(currentText.getValue());
             canvas.drawText(currentText.getValue(), left, bottom, sTextPaint);
         }
+    }
+
+    public ArrayList<String> getAllText (){
+
+        return allText;
     }
 }
